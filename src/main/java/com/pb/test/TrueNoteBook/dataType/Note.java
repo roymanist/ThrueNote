@@ -1,4 +1,4 @@
-package dataType;
+package com.pb.test.TrueNoteBook.dataType;
 
 import lombok.Data;
 

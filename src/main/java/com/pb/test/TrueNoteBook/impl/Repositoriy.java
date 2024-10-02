@@ -1,0 +1,63 @@
+/*package com.pb.test.TrueNoteBook.impl;
+
+import com.pb.test.TrueNoteBook.dataType.Note;
+import org.springframework.stereotype.Repository;
+
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Repository
+public class Repositoriy  {
+
+    public List<Note> FindAllNotes() throws SQLException {
+        String relativePath = "src/main/java/resources/NoteDBase";
+        List<Note> notebook = new ArrayList<>();
+        // Преобразование относительного пути в абсолютный
+        Path path = Paths.get(relativePath).toAbsolutePath();
+        String URL = "jdbc:h2:" + path;
+
+
+        Connection connection;
+        connection = DriverManager.getConnection(URL);
+        Statement SQL = connection.createStatement();
+        Statement statement = connection.createStatement();
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM notes");
+
+        while (resultSet.next()) {
+            Note note = new Note();
+            note.setId(resultSet.getString("id"));
+            note.setName(resultSet.getString("nameNote").trim());
+            note.setText(resultSet.getString("textNote").trim());
+
+
+            if (!notebook.contains(note)) {
+                notebook.add(note);
+
+            }
+        }
+        return notebook;
+    }
+
+    public List<Note> openAllNotes() {
+        return null;
+    }
+
+
+    public Note createNote(String id, String name, String text) {
+        return null;
+    }
+
+
+    public Note findById(String id) {
+        return null;
+    }
+
+
+    public void deleteNote(String id) {
+
+    }
+}
+        */
